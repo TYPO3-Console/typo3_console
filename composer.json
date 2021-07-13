@@ -28,26 +28,26 @@
     ],
     "license": "GPL-2.0-or-later",
     "require": {
-        "php": "^7.2",
+        "php": ">7.2",
 
-        "typo3/cms-backend": "^10.4.1 || >=11.2.0 <11.3",
-        "typo3/cms-core": "^10.4.1 || >=11.2.0 <11.3",
-        "typo3/cms-extbase": "^10.4.1 || >=11.2.0 <11.3",
-        "typo3/cms-extensionmanager": "^10.4.1 || >=11.2.0 <11.3",
-        "typo3/cms-fluid": "^10.4.1 || >=11.2.0 <11.3",
-        "typo3/cms-frontend": "^10.4.1 || >=11.2.0 <11.3",
-        "typo3/cms-install": "^10.4.1 || >=11.2.0 <11.3",
+        "typo3/cms-backend": "^10.4.1 || >=11.2.0 <11.4",
+        "typo3/cms-core": "^10.4.1 || >=11.2.0 <11.4",
+        "typo3/cms-extbase": "^10.4.1 || >=11.2.0 <11.4",
+        "typo3/cms-extensionmanager": "^10.4.1 || >=11.2.0 <11.4",
+        "typo3/cms-fluid": "^10.4.1 || >=11.2.0 <11.4",
+        "typo3/cms-frontend": "^10.4.1 || >=11.2.0 <11.4",
+        "typo3/cms-install": "^10.4.1 || >=11.2.0 <11.4",
 
         "symfony/console": "^4.4 || ^5.0",
         "symfony/process": "^4.4 || ^5.0",
-        "helhum/config-loader": ">=0.9 <0.13"
+        "helhum/config-loader": ">=0.9 <0.13 || dev-master"
     },
     "conflict": {
         "doctrine/dbal": "2.13.0 || 2.13.1"
     },
     "require-dev": {
-        "typo3/cms-reports": "^10.4.1 || >=11.2.0 <11.3 || dev-master",
-        "typo3/cms-filemetadata": "^10.4.1 || >=11.2.0 <11.3 || dev-master",
+        "typo3/cms-reports": "^10.4.1 || >=11.2.0 <11.4 || dev-master",
+        "typo3/cms-filemetadata": "^10.4.1 || >=11.2.0 <11.4 || dev-master",
         "typo3-console/create-reference-command": "@dev",
         "typo3-console/php-server-command": "^0.2",
         "symfony/expression-language": "^4.4 || ^5.0",

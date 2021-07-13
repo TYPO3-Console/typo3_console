@@ -175,7 +175,7 @@ class UpgradeCommandControllerTest extends AbstractCommandTest
             //TODO: FIXME
 //            $this->assertContains('pagesLanguageOverlayBeGroupsAccessRights', $output);
 //            $this->assertContains('Skipped wizard "typo3DbLegacyExtension"', $output);
-            $this->assertContains('Skipped wizard "rsaauthExtension"', $output);
+            $this->assertContains('Skipped wizard "anotherConfirmableUpgradeWizard"', $output);
             $this->assertContains('Skipped wizard "confirmableWizard" but it needs confirmation', $output);
             $output = $this->executeConsoleCommand('upgrade:run', ['all', '--confirm', 'all']);
             $this->assertContains('Successfully executed upgrade wizard "confirmableWizard"', $output);
@@ -222,8 +222,8 @@ class UpgradeCommandControllerTest extends AbstractCommandTest
         $this->executeConsoleCommand('extension:setup', ['ext_upgrade']);
         try {
             $this->executeMysqlQuery('DELETE FROM sys_registry WHERE entry_namespace = \'installUpdate\' AND (entry_key LIKE \'%ext_upgrade%\' OR entry_key LIKE \'%RsaauthExtractionUpdate%\')');
-            $output = $this->executeConsoleCommand('upgrade:run', ['all', '--confirm', 'all', '--deny', 'rsaauthExtension']);
-            $this->assertContains('Skipped wizard "rsaauthExtension"', $output);
+            $output = $this->executeConsoleCommand('upgrade:run', ['all', '--confirm', 'all', '--deny', 'anotherConfirmableUpgradeWizard']);
+            $this->assertContains('Skipped wizard "anotherConfirmableUpgradeWizard"', $output);
             $this->assertContains('Successfully executed upgrade wizard "confirmableWizard"', $output);
             $this->assertContains('Successfully executed upgrade wizard "normalWizard"', $output);
         } finally {
@@ -243,7 +243,7 @@ class UpgradeCommandControllerTest extends AbstractCommandTest
         try {
             $this->executeMysqlQuery('DELETE FROM sys_registry WHERE entry_namespace = \'installUpdate\' AND (entry_key LIKE \'%ext_upgrade%\' OR entry_key LIKE \'%RsaauthExtractionUpdate%\')');
             $output = $this->executeConsoleCommand('upgrade:run', ['all', '--deny', 'all', '--confirm', 'confirmableWizard']);
-            $this->assertContains('Skipped wizard "rsaauthExtension"', $output);
+            $this->assertContains('Skipped wizard "anotherConfirmableUpgradeWizard"', $output);
             $this->assertContains('Successfully executed upgrade wizard "confirmableWizard"', $output);
             $this->assertContains('Successfully executed upgrade wizard "normalWizard"', $output);
         } finally {
